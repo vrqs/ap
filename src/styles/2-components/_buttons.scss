@@ -13,7 +13,6 @@ button {
     700
   );
   @include flex(center, center);
-  padding-top: 3px;
   cursor: pointer;
   height: 40px;
   padding-inline: 16px;
@@ -36,7 +35,7 @@ button {
       );
       @include flex(center, center);
       height: 16px;
-      padding: 2px 6px 0;
+      padding: 0 6px;
       background-color: rgb(var(--color-accent-primary));
       border-radius: 200px;
       @include pos(-9, $r: -18);
