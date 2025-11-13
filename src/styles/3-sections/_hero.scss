@@ -1,0 +1,62 @@
+/**
+ * Section
+ * Hero
+ */
+
+@use "../0-abstracts/" as *;
+
+.hero {
+  max-height: 100vh;
+
+  .container {
+    @include grid(1fr 1fr);
+  }
+
+  .hero-content {
+    @include flex(column);
+    position: relative;
+    max-width: col-width(5);
+  }
+
+  .hero-text {
+    @include wh(100%, 100%, col-width(5));
+    @include flex(column, flex-start, space-around);
+    @include padding(y, (48, 64));
+  }
+
+  .cta {
+    display: none;
+  }
+  
+  figure {
+    @include padding(y, 20px);
+    height: 100%;
+
+    img {
+      @include wh(100%, 100%, $max-h: calc(100vh - 40px));
+      object-fit: cover;
+    }
+  }
+
+  @include mq($max: xl) {
+    border-top: 4px solid rgb(var(--color-accent-primary));
+    
+    .container {
+      @include grid(1fr, $gap: 32px);
+    }
+
+    .hero-text {
+      padding: 0;
+      margin-top: -16px;
+
+      p {
+        max-width: 360px;
+        @include margin(y, (8, 40));
+      }
+    }
+
+    .cta {
+      display: block;
+    }
+  }
+}

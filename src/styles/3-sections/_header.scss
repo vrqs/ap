@@ -1,0 +1,27 @@
+/**
+ * Section
+ * Header
+ */
+
+@use "../0-abstracts/" as *;
+
+header {
+  width: 100%;
+  @include flex(row, flex-end, space-between);
+
+  .logo {
+    width: 100px;
+  }
+
+  @include mq($max: xl) {
+    justify-content: flex-end;
+    
+    .logo {
+      width: 80px;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}

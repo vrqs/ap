@@ -1,0 +1,45 @@
+/**
+ * Components
+ * Buttons.scss
+ */
+
+@use "../0-abstracts/" as *;
+
+button {
+  @include font(
+    to-rem(16),
+    to-rem(20),
+    to-rem(-0.2),
+    700
+  );
+  @include flex(center, center);
+  padding-top: 3px;
+  cursor: pointer;
+  height: 40px;
+  padding-inline: 16px;
+  transition: all 120ms;
+  
+  &.outline {
+    background-color: transparent;
+    @include border(2px, rgb(var(--color-accent-primary)), 50px);
+    color: rgb(var(--color-accent-primary));
+    position: relative;
+
+    @include pseudo(after, $content: "Em Breve") {
+      @include font(
+        to-rem(11),
+        to-rem(12),
+        to-rem(0),
+        700,
+        rgb(var(--color-background-site)),
+        $trans: uppercase
+      );
+      @include flex(center, center);
+      height: 16px;
+      padding: 2px 6px 0;
+      background-color: rgb(var(--color-accent-primary));
+      border-radius: 200px;
+      @include pos(-9, $r: -18);
+    }
+  }
+}

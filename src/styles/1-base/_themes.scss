@@ -1,0 +1,24 @@
+/**
+ * Base
+ * Themes.scss
+ *
+ * Generates light and dark color themes
+ */
+
+@use "../0-abstracts" as *;
+
+:root {
+  @include generate-color-theme($color-theme-dark);
+  background-color: rgb(var(--color-background-site));
+}
+
+html,
+body {
+  position: relative;
+  background-color: rgb(var(--color-background-site));
+}
+
+body {
+  font-family: config("font-primary");
+  color: rgb(var(--color-text-primary));
+}

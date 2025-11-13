@@ -1,0 +1,196 @@
+/**
+ * Base
+ * Typography.scss
+ */
+
+@use "../0-abstracts/" as *;
+
+.heading {
+
+  &-1 {
+    @include font(
+      to-rem(80),
+      to-rem(72),
+      to-rem(-2),
+      800,
+      $trans: uppercase,
+    );
+  }
+
+  &-2 {
+    @include font(
+      to-rem(56),
+      to-rem(56),
+      to-rem(-2),
+      800
+    );
+  }
+
+  &-3 {
+    @include font(
+      to-rem(48),
+      to-rem(48),
+      to-rem(-3),
+      800
+    );
+  }
+
+  &-4 {
+    @include font(
+      to-rem(40),
+      to-rem(40),
+      to-rem(-1.5),
+      800
+    );
+  }
+
+  &-5 {
+    @include font(
+      to-rem(32),
+      to-rem(32),
+      to-rem(-1.5),
+      800
+    );
+  }
+
+  &-6 {
+    @include font(
+      to-rem(24),
+      to-rem(24),
+      to-rem(-.6),
+      800
+    );
+  }
+
+  @include mq($max: xl) {
+    &-1 {
+      @include font(
+        to-rem(48),
+        to-rem(44),
+        to-rem(-1)
+      );
+    }
+  }
+}
+
+.body {
+  &-normal {   
+    @include font(
+      to-rem(18),
+      to-rem(24),
+      to-rem(-.2),
+      450
+    );
+
+    &-medium {
+      @extend .body-normal;
+      letter-spacing: to-rem(-.4);
+      font-weight: 550;
+    }
+    
+    &-bold {
+      @extend .body-normal;
+      letter-spacing: to-rem(-.4);
+      font-weight: 700;
+    }
+  }
+  
+  &-large {   
+    @include font(
+      to-rem(24),
+      to-rem(32),
+      to-rem(0),
+      450,
+      $family: config("font-secondary"),
+    );
+
+    &-medium {
+      @extend .body-small;
+      letter-spacing: to-rem(-.35);
+      font-weight: 500;
+    }
+    
+    &-bold {
+      @extend .body-small;
+      letter-spacing: to-rem(-.4);
+      font-weight: 700;
+    }
+  }
+  
+  &-small {   
+    @include font(
+      to-rem(16),
+      to-rem(20),
+      to-rem(-.2),
+      450
+    );
+
+    &-medium {
+      @extend .body-small;
+      letter-spacing: to-rem(-.35);
+      font-weight: 500;
+    }
+    
+    &-bold {
+      @extend .body-small;
+      letter-spacing: to-rem(-.4);
+      font-weight: 700;
+    }
+  }
+
+  @include mq($max: xl) {
+    &-large {   
+      @include font(
+        to-rem(20),
+        to-rem(28),
+        to-rem(0),
+      );
+    }
+  }
+}
+
+.label {
+  &-normal {   
+    @include font(
+      to-rem(14),
+      to-rem(20),
+      to-rem(-.1),
+      450
+    );
+
+    &-medium {
+      @extend .label-normal;
+      line-height: to-rem(20);
+      font-weight: 550;
+    }
+    
+    &-bold {
+      @extend .label-normal;
+      letter-spacing: to-rem(-.4);
+      font-weight: 700;
+    }
+  }
+
+  &-mono {
+    @include font(
+      to-rem(14),
+      to-rem(20),
+      $family: config("font-secondary"),
+    );
+
+    &-medium {
+      @extend .label-mono;
+      font-weight: 600;
+    }
+    
+    &-small {
+      @include font(
+        to-rem(12),
+        to-rem(16),
+        to-rem(-.1),
+        500,
+        $family: config("font-secondary"),
+      );
+    }
+  }
+}
